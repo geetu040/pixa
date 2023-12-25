@@ -181,7 +181,7 @@ data:
   PIX_DB_PASSWORD: 'your-db-password-placeholder'
   ...
 ```
-Referred in Deployment: [manifests\deployment.yaml](manifests\deployment.yaml)
+Referred in Deployment: [manifests/deployment.yaml](manifests/deployment.yaml)
 ```yaml
 kind: Deployment
 ...
@@ -192,7 +192,7 @@ containers:
   - configMapRef:
     name: pixa-config
 ```
-Usage in Containers: [microservices\auth-service\config.py](microservices\auth-service\config.py)
+Usage in Containers: [microservices/auth-service/config.py](microservices/auth-service/config.py)
 ```python
 import os
 HOST = os.environ.get("PIX_DB_HOST")
@@ -239,7 +239,7 @@ spec:
     requests:
       storage: 1Gi
 ```
-Referred in Deployment: [manifests\deployment.yaml](manifests\deployment.yaml)
+Referred in Deployment: [manifests/deployment.yaml](manifests/deployment.yaml)
 ```yaml
 kind: Deployment
 ...
@@ -255,7 +255,7 @@ containers:
   - mountPath: "/mnt"
   name: volume
 ```
-Usage in Containers for saving logs: [microservices\auth-service\Dockerfile](microservices\auth-service\Dockerfile)
+Usage in Containers for saving logs: [microservices/auth-service/Dockerfile](microservices/auth-service/Dockerfile)
 ```Dockerfile
 FROM python:3.9-slim
 ...
@@ -286,7 +286,7 @@ def decode_token(token: str):
 
 Threading has been used where the contoller needs to communicate with other services to get data or create user asynchronously
 
-[microservices\controller-service\service.py](microservices\controller-service\service.py)
+[microservices/controller-service/service.py](microservices/controller-service/service.py)
 ```python
 def create_user(username, password):
 
