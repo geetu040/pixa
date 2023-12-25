@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pixa</title>
+	<meta name="description" content="Blueprint: Blueprint: Google Grid Gallery" />
+	<meta name="keywords" content="google getting started gallery, image gallery, image grid, template, masonry" />
+	<meta name="author" content="Codrops" />
+	<link rel="shortcut icon" href="favicon">
+	<link rel="stylesheet" type="text/css" href="static/css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="static/css/component.css" />
+	<script src="static/js/modernizr.custom.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet" href="static/css/style.css">
+
+</head>
+
+<body>
+
+	<div class="loader-container" id="loaderContainer">
+		<div class="loader"></div>
+	</div>
+
+	<nav class="top-nav">
+		<div>Storage: <span id="storage_usage"></span>/1000 MB</div>
+		<div><span id="username" onclick="logout()"></span></div>
+		<div>Usage: <span id="bandwidth_usage"></span>/25 MB Today</div>
+	</nav>
+	<div class="container">
+		<header class="clearfix">
+			<span>PIXA</span>
+			<h1>Your Gallery on Cloud</h1>
+			<nav>
+				<i class="fas fa-arrow-up" onclick="upload_image_btn()"></i>
+			</nav>
+		</header>
+		<!-- Upload Popup -->
+		<div id="uploadPopup">
+			<input type="file" id="fileInput" accept="image/*" onchange="handleFile()">
+			<button onclick="closePopup()">Close</button>
+		</div>
+		<div id="grid-gallery" class="grid-gallery">
+			<section class="grid-wrap">
+				<ul id="dashboard" class="grid"></ul>
+			</section><!-- // grid-wrap -->
+			<section class="slideshow">
+				<ul id="hover-dashboard"></ul>
+				<nav>
+					<span class="icon nav-prev"></span>
+					<span class="icon nav-next"></span>
+					<span class="icon nav-close"></span>
+				</nav>
+				<div class="info-keys icon">Navigate with arrow keys</div>
+			</section><!-- // slideshow -->
+		</div><!-- // grid-gallery -->
+	</div>
+	<script src="static/js/imagesloaded.pkgd.min.js"></script>
+	<script src="static/js/masonry.pkgd.min.js"></script>
+	<script src="static/js/classie.js"></script>
+	<script src="static/js/cbpGridGallery.js"></script>
+	<script src="static/js/config.js"></script>
+	<script src="static/js/script.js"></script>
+
+	<script>
+		// new CBPGridGallery(document.getElementById('grid-gallery'));
+	</script>
+</body>
+
+</html>

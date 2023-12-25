@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pixa-pvc
+spec:
+  accessModes:
+  - ReadWriteMany   # ReadWriteOnce, ReadOnlyMany or ReadWriteMany
+  # storageClassName: hostpath
+  storageClassName: pixa-sc
+  resources:
+    requests:
+      storage: 1Gi

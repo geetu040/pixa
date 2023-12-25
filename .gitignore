@@ -1,0 +1,8 @@
+# ignore cache files
+microservices/*/__pycache__/
+
+# config files with env variables and secrets
+manifests/configmap-filled.yaml
+
+# extra files in work environment
+extras/

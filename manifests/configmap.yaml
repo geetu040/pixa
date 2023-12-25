@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pixa-config
+data:
+
+  PIX_DB_HOST: 'your-db-host-placeholder'
+  PIX_DB_DATABASE: 'your-db-name-placeholder'
+  PIX_DB_USER: 'your-db-user-placeholder'
+  PIX_DB_PASSWORD: 'your-db-password-placeholder'
+
+  PIXA_AUTH_SECRET_KEY: "your-auth-secret-key-placeholder"
+  PIXA_AUTH_ALGORITHM: "your-auth-algorithm-placeholder"
+
+  PIXA_STORAGE_CONNECTION_STRING: "your-storage-connection-string-placeholder"
+  PIXA_STORAGE_STORAGE_NAME: "your-storage-name-placeholder"
+  PIXA_STORAGE_SHARE_NAME: "your-share-name-placeholder"
+  PIXA_STORAGE_URL_SASTOKEN: "your-storage-sastoken-placeholder"
+  PIXA_STORAGE_ACCOUNT_KEY: "your-storage-account-key-placeholder"
+
+  PIXA_STORAGELOGS_CONNECTION_STRING: "your-logs-connection-string-placeholder"
+  PIXA_STORAGELOGS_STORAGE_NAME: "your-logs-storage-name-placeholder"
+  PIXA_STORAGELOGS_CONTAINER_NAME: "your-logs-container-name-placeholder"

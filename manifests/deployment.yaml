@@ -1,0 +1,113 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pixa-deploy
+  labels:
+    app: pixa-deploy
+spec:
+  selector:
+    matchLabels:
+      app: pixa-deploy
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: pixa-deploy
+    spec:
+
+      volumes:
+        - name: volume
+          persistentVolumeClaim:
+            claimName: pixa-pvc
+
+      containers:
+
+        - name: pixa-controller-service
+          image: ghcr.io/geetu040/pixa-controller-service
+          envFrom:
+          - configMapRef:
+              name: pixa-config
+          resources:
+            limits:
+              cpu: 200m
+              memory: 500Mi
+            requests:
+              cpu: 100m
+              memory: 200Mi
+          ports:
+            - containerPort: 80
+          volumeMounts:
+          - mountPath: "/mnt"
+            name: volume
+
+        - name: pixa-auth-service
+          image: ghcr.io/geetu040/pixa-auth-service
+          envFrom:
+          - configMapRef:
+              name: pixa-config
+          resources:
+            limits:
+              cpu: 200m
+              memory: 500Mi
+            requests:
+              cpu: 100m
+              memory: 200Mi
+          ports:
+            - containerPort: 5000
+          volumeMounts:
+          - mountPath: "/mnt"
+            name: volume
+
+        - name: pixa-storage-account-service
+          image: ghcr.io/geetu040/pixa-storage-account-service
+          envFrom:
+          - configMapRef:
+              name: pixa-config
+          resources:
+            limits:
+              cpu: 200m
+              memory: 500Mi
+            requests:
+              cpu: 100m
+              memory: 200Mi
+          ports:
+            - containerPort: 5001
+          volumeMounts:
+          - mountPath: "/mnt"
+            name: volume
+
+        - name: pixa-storage-monitor-service
+          image: ghcr.io/geetu040/pixa-storage-monitor-service
+          envFrom:
+          - configMapRef:
+              name: pixa-config
+          resources:
+            limits:
+              cpu: 200m
+              memory: 500Mi
+            requests:
+              cpu: 100m
+              memory: 200Mi
+          ports:
+            - containerPort: 8000
+          volumeMounts:
+          - mountPath: "/mnt"
+            name: volume
+
+        - name: pixa-usage-monitor-service
+          image: ghcr.io/geetu040/pixa-usage-monitor-service
+          envFrom:
+          - configMapRef:
+              name: pixa-config
+          resources:
+            limits:
+              cpu: 200m
+              memory: 500Mi
+            requests:
+              cpu: 100m
+              memory: 200Mi
+          ports:
+            - containerPort: 8001
+          volumeMounts:
+          - mountPath: "/mnt"
+            name: volume
