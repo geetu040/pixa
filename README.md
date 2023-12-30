@@ -2,9 +2,11 @@
 
 Welcome to Pixa, a sophisticated cloud-based image storage and management solution. This repository houses the deployment architecture, storage units, and other essential components that power Pixa. Explore the seamless deployment process, microservices structure, and CI/CD automation.
 
-<a href="https://youtu.be/tM_GW6ikVQE"><p align="center">
+<a href="https://youtu.be/tM_GW6ikVQE">
+<p align="center">
   <img src="assets/demo.png" align="center" />
-</p></a>
+</p>
+</a>
 
 <p align="center">
   <img src="assets/tools.png" align="center" />
